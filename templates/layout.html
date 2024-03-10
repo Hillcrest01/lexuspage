@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {%block title%}
+
+        {%endblock title%}
+    </title>
+    <style>
+        .body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .head {
+            background-color: rgb(13, 21, 22);
+            height: 50px;
+            /*overflow hidden is used to ensure that when scrolling the navigation bar will remain sticked and will not be scrolled together with the content of the webpage or the application. */
+            overflow: hidden;
+            position: sticky;
+
+        }
+
+        .fargo {
+            color: white;
+            font-weight: bold;
+            padding: 18px;
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-right: 800px;
+            text-align: center;
+        }
+
+        .fargo a {
+            color: white;
+        }
+
+        .fargo a:hover {
+            text-decoration: none;
+        }
+
+        .list {
+            display: inline-block;
+            padding: 20px;
+            margin-left: 10px;
+        }
+
+        .list li {
+            display: inline;
+            color: white;
+            margin: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .list li a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .list li a:hover {
+            text-decoration: underline;
+        }
+
+        .finish {
+            background-color: rgb(13, 21, 22);
+            height: 50px;
+            /*overflow hidden is used to ensure that when scrolling the navigation bar will remain sticked and will not be scrolled together with the content of the webpage or the application. */
+            overflow: hidden;
+            position: sticky;
+            margin-top: 850px;
+            text-align: center;
+        }
+
+        .footage {
+            display: inline-block;
+            padding: 20px;
+            margin-left: 10px;
+        }
+
+        .footage li {
+            display: inline;
+            color: white;
+            margin: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .footage li a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footage li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    </style>
+</head>
+
+<body class="body" style="background-color: #212121; color: white;">
+    <div class="head">
+        <span class="fargo">
+            <a href="{{ url_for('home_page')}}">
+                Flask Blog
+            </a>
+        </span>
+        <ul class="list">
+            <li><a href="{{ url_for ('home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('about_page')}}">About</a></li>
+            <li><a href="{{url_for('market_page')}}">market</a></li>
+        </ul>
+
+        <ul class="list">
+            <li><a href="{{ url_for ('register') }}">register</a></li>
+            <li><a href="{{ url_for ('login') }}">log in</a></li>
+        </ul>
+    </div>
+    <hr>
+
+    <footer>
+        <div class="finish">
+            <ul class="footage">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">More Info.</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

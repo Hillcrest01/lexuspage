@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Document
+    </title>
+</head>
+
+<style>
+    .body {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .logodiv {
+        text-align: center;
+    }
+
+
+    .logo {
+        height: 200px;
+        width: 200px;
+        border-radius: 10px;
+
+    }
+
+    .form {
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .customerName {
+        height: 30px;
+        width: 22em;
+        margin-left: 10px;
+        border-radius: 5px;
+        border-left: none;
+        border-top: none;
+        font-size: 15px;
+    }
+
+    .owner {
+        height: 30px;
+        margin-top: 30px;
+        font-size: 15px;
+    }
+
+    .submit {
+        width: 22em;
+        background-color: #212121;
+        height: 3em;
+        border: none;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .submit:hover {
+        background-color: #646060;
+        transition-duration: 1s;
+    }
+
+    .message {
+        background-color: rgb(233, 111, 111);
+    }
+</style>
+
+<body>
+    <div class="logodiv">
+        <img class="logo" src="../static/logo.jpg" alt="the logo image should be here">
+
+    </div>
+    <div class="form">
+        {% if message %}
+        <p class="message">
+            {{ message | safe }}
+        </p>
+        {% endif %}
+    </div>
+
+    <div class="form">
+        <p>
+        <form class="formdiv" action="/submit" method="POST">
+            <!--form action attribute specifies where to send the form data when a form is submitted-->
+            Customer Name: <input class="customerName" type="text" name="customer" placeholder="Enter your name here">
+    </div>
+
+    <div class="form">
+        Select an owner
+        <select name="owner" class="owner">
+            <option value="">Select an owner</option>
+            <option value="Petah">Petah</option>
+            <option value="Hillcrest">Hillcrest</option>
+            <option value="Tom">Tom</option>
+            <option value="Wycky">Wycky</option>
+        </select>
+    </div>
+    <div class="form">
+        Give your ratings
+        <input type="radio" name="rating">1
+        <input type="radio" name="rating">2
+        <input type="radio" name="rating">3
+        <input type="radio" name="rating">4
+        <input type="radio" name="rating">5
+        <input type="radio" name="rating">6
+        <input type="radio" name="rating">7
+        <input type="radio" name="rating">8
+        <input type="radio" name="rating">9
+        <input type="radio" name="rating" checked>10
+    </div>
+
+    <div class="form">
+        <textarea name="comments" class="comments" cols="40" rows="10"
+            placeholder="give us some comments from your own view">
+        </textarea>
+    </div>
+    <div class="form">
+        <input type="submit" name="submit" class="submit">
+    </div>
+    </form>
+
+</body>
+
+</html>
